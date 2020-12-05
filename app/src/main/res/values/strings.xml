@@ -9,6 +9,10 @@
     <string name="sign_up_text">Sign Up</string>
     <string name="email_hint">Enter Email</string>
     <string name="password_hint">Enter Password</string>
+    <string name="welcome_text">Welcome</string>
+    <string name="welcome_message">We bring you for different activities and occasions to
+        suit your needs</string>
+    <string name="get_started_button_text">Get Started</string>
 
 
 </resources>
