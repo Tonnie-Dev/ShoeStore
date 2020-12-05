@@ -28,6 +28,14 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+     buildFeatures {
+             //for data binding - default is false
+             dataBinding = true
+
+             //for vieBinding - default is true
+             viewBinding = true
+         }
 }
 
 dependencies {
@@ -46,4 +54,7 @@ dependencies {
      //dependencies for navigation-fragment-ktx and navigation-ui-ktx
          implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
          implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Data Binding
+    implementation "androidx.databinding:databinding-common:$data_binding_version"
 }

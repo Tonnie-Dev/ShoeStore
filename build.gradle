@@ -6,6 +6,7 @@ buildscript {
     ext{
         kotlin_version = '1.4.20'
         nav_version = '2.3.2'
+        data_binding_version = '7.0.0-alpha02'
     }
 
     repositories {
