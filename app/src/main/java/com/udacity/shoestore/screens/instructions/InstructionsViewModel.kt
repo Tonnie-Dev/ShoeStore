@@ -6,6 +6,6 @@ class InstructionsViewModel:ViewModel() {
 
 
     init {
-        
+
     }
 }
