@@ -6,13 +6,13 @@
     <data>
 <variable
     name="viewModel"
-    type="com.udacity.shoestore.login.LoginViewModel" />
+    type="com.udacity.shoestore.screens.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".login.LoginFragment">
+        tools:context=".screens.login.LoginFragment">
 
         <TextView
             android:id="@+id/emailTextLabel"

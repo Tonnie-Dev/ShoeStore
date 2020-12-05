@@ -7,13 +7,13 @@
 
         <variable
             name="viewModel"
-            type="com.udacity.shoestore.welcome.WelcomeViewModel" />
+            type="com.udacity.shoestore.screens.welcome.WelcomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".welcome.WelcomeFragment">
+        tools:context=".screens.welcome.WelcomeFragment">
 
         <TextView
             android:id="@+id/welcomeLabel"
