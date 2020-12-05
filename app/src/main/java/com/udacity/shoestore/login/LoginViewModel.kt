@@ -19,7 +19,7 @@ class LoginViewModel : ViewModel(){
 
 
 
-    fun navigateToWelcomeScreen(){
+    fun onNavigateToWelcomeScreen(){
 
         _eventNavigateToWelcomeScreen.value = true
     }

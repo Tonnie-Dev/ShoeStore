@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="viewModel"
-    type="com.udacity.shoestore.welcome.WelcomeViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.welcome.WelcomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
