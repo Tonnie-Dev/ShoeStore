@@ -1,3 +1,11 @@
 package com.udacity.shoestore.login
 
-class LoginViewModel {}
+import androidx.lifecycle.ViewModel
+
+class LoginViewModel : ViewModel(){
+
+
+    init {
+        
+    }
+}
