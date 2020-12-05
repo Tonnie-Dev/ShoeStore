@@ -13,6 +13,9 @@
     <string name="welcome_message">We bring you for different activities and occasions to
         suit your needs</string>
     <string name="get_started_button_text">Get Started</string>
+    <string name="continue_button_text">Continue</string>
+    <string name="instructions_text">Instructions</string>
+    <string name="instructionsn_msg">Browse various types of shoes</string>
 
 
 </resources>
