@@ -34,7 +34,9 @@
         tools:layout="@layout/fragment_instructions" >
         <action
             android:id="@+id/action_instructionsFragment_to_shoeListing"
-            app:destination="@id/shoeListing" />
+            app:destination="@id/shoeListing"
+            app:enterAnim="@anim/slide_in_anim"
+            app:exitAnim="@anim/slide_out_anim" />
     </fragment>
     <fragment
         android:id="@+id/shoeListing"
@@ -43,7 +45,9 @@
         tools:layout="@layout/fragment_shoe_listing" >
         <action
             android:id="@+id/action_shoeListing_to_shoeDetailFragment"
-            app:destination="@id/shoeDetailFragment" />
+            app:destination="@id/shoeDetailFragment"
+            app:enterAnim="@anim/slide_in_anim"
+            app:exitAnim="@anim/slide_out_anim" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
