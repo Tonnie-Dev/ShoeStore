@@ -6,6 +6,6 @@ class ShoeListingViewModel : ViewModel() {
 
 
     init {
-        
+
     }
 }
