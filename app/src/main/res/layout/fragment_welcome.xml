@@ -16,7 +16,7 @@
         tools:context=".screens.welcome.WelcomeFragment">
 
         <TextView
-            android:id="@+id/welcomeLabel"
+            android:id="@+id/welcomeHeaderLabel"
             style="@style/TextAppearance.MaterialComponents.Headline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/getStartedButton"
+            android:id="@+id/welcomeMsgLabel"
             style="@style/TextAppearance.MaterialComponents.Subtitle2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -38,21 +38,22 @@
             android:layout_marginBottom="32dp"
             android:text="@string/welcome_message"
             android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/getStartedButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/welcomeHeaderLabel" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/getStartedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="57dp"
             android:text="@string/get_started_button_text"
+            android:onClick="@{()-> viewModel.onNavigateToInstructionsFragment()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/getStartedButton" />
+            app:layout_constraintTop_toBottomOf="@+id/welcomeMsgLabel" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
