@@ -5,17 +5,45 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
-
+import com.udacity.shoestore.databinding.FragmentShoeListingBinding
 
 
 class ShoeListing : Fragment() {
+    private lateinit var binding:FragmentShoeListingBinding
+    private lateinit var viewModel: ShoeListingViewModel
 
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_shoe_listing, container, false)
+        binding = FragmentShoeListingBinding.inflate(inflater)
+
+        //initialize ViewModel
+        viewModel =  ViewModelProvider(this).get(ShoeListingViewModel::class.java)
+        //bind layout to the ViewModel
+        binding.viewModel = viewModel
+
+        //make binding observe LiveData
+
+        binding.lifecycleOwner = this
+
+
+        //observe Navigation event
+
+        viewModel.eventNavigateToShoeDetail.observe(viewLifecycleOwner  ){
+
+            eventNavigate  ->
+
+            if (eventNavigate){
+
+
+                findNavController().navigate(ShoeListingDirections.actionShoeListingToShoeDetailFragment())
+            }
+        }
+
+        return binding.root
     }
 
 
