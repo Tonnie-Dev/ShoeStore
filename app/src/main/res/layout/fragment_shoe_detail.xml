@@ -127,7 +127,7 @@
         <Button
             android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
-            android:onClick="@{()->sharedViewModel.onClickSaveButton()}"
+            android:onClick="@{()->sharedViewModel.onSaveButtonClick()}"
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
             android:layout_marginBottom="128dp"
@@ -140,6 +140,7 @@
         <Button
             android:id="@+id/buttonCancel"
             android:layout_width="wrap_content"
+            android:onClick="@{() ->sharedViewModel.onCancelButtonClick()}"
             android:layout_height="wrap_content"
             android:layout_marginEnd="75dp"
             android:layout_marginBottom="128dp"
