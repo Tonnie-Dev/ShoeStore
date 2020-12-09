@@ -5,9 +5,11 @@
 
     <data>
 
+
+
         <variable
-            name="viewModel"
-            type="com.udacity.shoestore.screens.shoelisting.ShoeListingViewModel" />
+            name="sharedViewModel"
+            type="com.udacity.shoestore.screens.shoelisting.SharedViewModel" />
 
     </data>
 
@@ -153,7 +155,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
             android:contentDescription="@string/fab_content_desc"
-            android:onClick="@{()-> viewModel.onNavigateToShoeDetail()}"
+            android:onClick="@{()-> sharedViewModel.onNavigateToShoeDetail()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/ic_menu_edit" />

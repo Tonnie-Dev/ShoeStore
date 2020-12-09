@@ -7,7 +7,12 @@ import com.udacity.shoestore.models.Shoe
 
 class SharedViewModel: ViewModel() {
 
+    //EVENT_NAVIGATE_TO_DETAIL_FRAGMENT
+    private val _eventNavigateToShoeDetail = MutableLiveData<Boolean>()
+    val eventNavigateToShoeDetail:LiveData<Boolean>
+    get() = _eventNavigateToShoeDetail
 
+//SHOE_LIST
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList:LiveData<MutableList<Shoe>>
     get()= _shoeList
@@ -15,6 +20,12 @@ class SharedViewModel: ViewModel() {
     init {
 
         _shoeList.value = mutableListOf()
+        _eventNavigateToShoeDetail.value = false
 
+    }
+
+
+    fun onNavigateToShoeDetail() {
+        _eventNavigateToShoeDetail.value = true
     }
 }

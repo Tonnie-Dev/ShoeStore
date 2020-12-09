@@ -14,26 +14,24 @@ import com.udacity.shoestore.databinding.FragmentShoeListingBinding
 
 class ShoeListing : Fragment() {
     private lateinit var binding:FragmentShoeListingBinding
-   private val viewModel:ShoeListingViewModel by activityViewModels()
 
-private val viewModel2:SharedViewModel by activityViewModels()
+
+private val sharedViewModel:SharedViewModel by activityViewModels()
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentShoeListingBinding.inflate(inflater)
 
-        //initialize ViewModel
-        //viewModel =  ViewModelProvider(this).get(ShoeListingViewModel::class.java)
+
         //bind layout to the ViewModel
-        binding.viewModel = viewModel
+        binding.sharedViewModel = sharedViewModel
 
         //make binding observe LiveData
-
         binding.lifecycleOwner = this
 
 
         //observe Navigation event
 
-        viewModel.eventNavigateToShoeDetail.observe(viewLifecycleOwner  ){
+        sharedViewModel.eventNavigateToShoeDetail.observe(viewLifecycleOwner  ){
 
             eventNavigate  ->
 
