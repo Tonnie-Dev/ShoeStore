@@ -155,7 +155,7 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
             android:contentDescription="@string/fab_content_desc"
-            android:onClick="@{()-> sharedViewModel.onNavigateToShoeDetail()}"
+            android:onClick="@{()-> sharedViewModel.onEditFabButtonClick()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/ic_menu_edit" />
