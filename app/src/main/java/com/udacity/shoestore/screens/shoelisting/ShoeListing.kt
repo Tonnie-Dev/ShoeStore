@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListingBinding
+import timber.log.Timber
 
 
 class ShoeListing : Fragment() {
@@ -21,13 +22,12 @@ private val sharedViewModel:SharedViewModel by activityViewModels()
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentShoeListingBinding.inflate(inflater)
 
-
+        Timber.i(" listing onCreateView called")
         //bind layout to the ViewModel
         binding.sharedViewModel = sharedViewModel
 
         //make binding observe LiveData
         binding.lifecycleOwner = this
-
 
         //observe Navigation event
 
@@ -37,12 +37,20 @@ private val sharedViewModel:SharedViewModel by activityViewModels()
 
             if (eventNavigate){
 
-
+Timber.i("at listing observatory Nav to Detail is $eventNavigate")
                 findNavController().navigate(ShoeListingDirections.actionShoeListingToShoeDetailFragment())
+                sharedViewModel.onNavigateToDetailFragmentComplete()
             }
         }
 
+
         return binding.root
+    }
+
+
+    override fun onDetach() {
+        super.onDetach()
+        Timber.i("onDetach has been summoned")
     }
 
 

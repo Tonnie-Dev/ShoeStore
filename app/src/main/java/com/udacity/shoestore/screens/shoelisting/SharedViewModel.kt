@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
+import timber.log.Timber
 
 class SharedViewModel : ViewModel() {
 
@@ -12,10 +13,17 @@ class SharedViewModel : ViewModel() {
     val eventNavigateToShoeDetail: LiveData<Boolean>
         get() = _eventNavigateToShoeDetail
 
+    //EVENT_NAVIGATE_TO_DETAIL_FRAGMENT_COMPLETE
+    private val _eventNavigateToShoeDetailCompleted = MutableLiveData<Boolean>()
+    val eventNavigateToShoeCompleted: LiveData<Boolean>
+        get() = _eventNavigateToShoeDetailCompleted
+
+
+
     //EVENT_NAVIGATE_BACK_TO_SHOE_LISTING
-    private val _eventNavigateBack = MutableLiveData<Boolean>()
-    val eventNavigateBack:LiveData<Boolean>
-    get() = _eventNavigateBack
+    private val _eventNavigateBackToListing = MutableLiveData<Boolean>()
+    val eventNavigateBackToListing:LiveData<Boolean>
+    get() = _eventNavigateBackToListing
 
     //SHOE_LIST
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
@@ -25,23 +33,45 @@ class SharedViewModel : ViewModel() {
     init {
 
         _shoeList.value = mutableListOf()
-        _eventNavigateToShoeDetail.value = false
-        _eventNavigateBack . value = false
+       // _eventNavigateToShoeDetail.value = false
+        _eventNavigateBackToListing.value = false
+        //_eventNavigateToShoeDetailCompleted.value = false
 
     }
-
+//SHOE_LISTING_FRAGMENT_METHODS
 
     fun onEditFabButtonClick() {
         _eventNavigateToShoeDetail.value = true
+
+
     }
 
+    fun onNavigateToDetailFragmentComplete(){
+        _eventNavigateToShoeDetail.value =false
+        _eventNavigateBackToListing.value = false
+        Timber.i("Nav Value to DetailFragment ${_eventNavigateToShoeDetail.value}")
+    }
+
+
+
+    //SHOE_DETAIL_FRAGMENT_METHODS
     fun onSaveButtonClick() {
 
-        _eventNavigateBack.value = true
+        _eventNavigateBackToListing.value = true
 
     }
 
     fun onCancelButtonClick() {
-        _eventNavigateBack.value = true
+        _eventNavigateBackToListing.value = true
+    }
+
+
+
+
+
+    override fun onCleared() {
+        super.onCleared()
+
+        Timber.i("onCleared has been summoned")
     }
 }
