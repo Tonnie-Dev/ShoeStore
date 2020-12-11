@@ -48,6 +48,7 @@ class ShoeListing : Fragment() {
             }
         }
 
+        //observe shoeList for changes and inflate layout
         sharedViewModel.shoeList.observe(viewLifecycleOwner) {
 
             newShoeList ->
@@ -55,7 +56,7 @@ class ShoeListing : Fragment() {
             if (newShoeList.isNotEmpty()) {
 
 
-                newShoeList.forEachIndexed { _, shoe -> createShoeLabel(shoe) }
+                newShoeList.forEach { shoe -> inflateShoeLabels(shoe) }
             }
         }
 
@@ -63,17 +64,17 @@ class ShoeListing : Fragment() {
         return binding.root
     }
 
+//draw 4 textViews with Labels and insert border
+    private fun inflateShoeLabels(shoe: Shoe) {
 
-    private fun createShoeLabel(shoe: Shoe) {
-
-        //val shoe = shoeList.last()
-        createTextLabel(shoe.name)
-        createTextLabel(shoe.size.toString())
-        createTextLabel(shoe.company)
-        createTextLabel(shoe.description)
-        insertBoarder()
+        createTextLabel(getString(R.string.styled_shoe_name, shoe.name))
+        createTextLabel(getString(R.string.styled_size, shoe.size))
+        createTextLabel(getString(R.string.styled_company_name,shoe.company))
+        createTextLabel(getString(R.string.styled_description, shoe.description))
+        insertBorder()
     }
 
+    //draw one textView
     private fun createTextLabel(label: String) {
 
 
@@ -89,8 +90,8 @@ class ShoeListing : Fragment() {
 
     }
 
-
-private fun insertBoarder(){
+//insert border between shoe objects
+private fun insertBorder(){
     val textView = TextView(context)
     val params =
             LinearLayout.LayoutParams(
@@ -98,7 +99,7 @@ private fun insertBoarder(){
     params.setMargins(0, 0, 0, 30)
     params.gravity = Gravity.CENTER
     textView.layoutParams = params
-    textView.height = 5
+    textView.height = 2
     textView.setBackgroundColor(Color.GREEN)
     linearLayout.addView(textView)
 

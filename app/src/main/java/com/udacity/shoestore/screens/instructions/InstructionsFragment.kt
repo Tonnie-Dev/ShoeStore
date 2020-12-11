@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class InstructionsFragment : Fragment() {
@@ -33,6 +34,8 @@ private lateinit var viewModel: InstructionsViewModel
         //make binding observe LiveData
 
         binding.lifecycleOwner = this
+
+
 
 
         //observe Navigation event
