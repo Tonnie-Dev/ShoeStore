@@ -89,7 +89,7 @@ class SharedViewModel : ViewModel() {
         _description.value = edDescription
 
         //add a new shoeList Element
-
+_shoeList.value?.add(Shoe(edShoeName, edSize.toDouble(),edCompany,edDescription))
 
     }
 

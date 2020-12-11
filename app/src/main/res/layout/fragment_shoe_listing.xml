@@ -19,132 +19,17 @@
 
 
         <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="130dp"
             tools:layout_editor_absoluteY="93dp">
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="300dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="128dp"
-                    android:layout_marginBottom="16dp"
-                    app:srcCompat="@drawable/golden_boot" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:id="@+id/labelLinearLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="500dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-
-                        <TextView
-                            android:id="@+id/nameLabel"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="125dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/name_text_label" />
-
-                        <TextView
-                            android:id="@+id/companyLabel"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="125dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/company_name_label_text" />
-
-                        <TextView
-                            android:id="@+id/sizeLabel"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="125dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/shoe_size_label_text" />
-
-                        <TextView
-                            android:id="@+id/descLabel"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="125dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@string/shoe_desc_label_text" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/valuesLinearLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="500dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/nameTextView"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@{sharedViewModel.name}" />
-
-                        <TextView
-                            android:id="@+id/companyTextView"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@{sharedViewModel.company}" />
-
-                        <TextView
-                            android:id="@+id/sizeTextView"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@{sharedViewModel.size.toString()}" />
-
-                        <TextView
-                            android:id="@+id/descTextView"
-                            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginTop="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:text="@{sharedViewModel.description}" />
-                    </LinearLayout>
-
-
-                </LinearLayout>
-            </LinearLayout>
+                android:orientation="vertical" />
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
