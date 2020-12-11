@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentWelcomeBinding
@@ -43,7 +44,8 @@ private lateinit var viewModel:WelcomeViewModel
             }
         }
 
-
+        //Add title to toolbar
+        (activity as AppCompatActivity).supportActionBar?.title = "Welcome"
 
         // Inflate the layout for this fragment
         return binding.root

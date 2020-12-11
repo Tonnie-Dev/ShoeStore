@@ -30,6 +30,8 @@ private lateinit var viewModel: InstructionsViewModel
 
         (activity as AppCompatActivity).supportActionBar?.title = "Instructions"
 
+
+
         //bind layout to the viewModel
         binding.viewModel = viewModel
 

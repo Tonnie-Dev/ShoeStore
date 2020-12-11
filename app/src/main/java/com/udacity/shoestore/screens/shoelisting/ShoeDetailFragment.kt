@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -34,7 +35,7 @@ class ShoeDetailFragment : Fragment() {
         binding.lifecycleOwner = this
 
 
-        //observe
+        //observe Nav Event
 
         sharedViewModel.eventNavigateBackToListing.observe(viewLifecycleOwner){ eventNavigateBack ->
 
@@ -45,6 +46,9 @@ class ShoeDetailFragment : Fragment() {
             }
         }
 
+
+        //Add title to toolbar
+        (activity as AppCompatActivity).supportActionBar?.title = "Add Shoe"
         return binding.root
     }
 

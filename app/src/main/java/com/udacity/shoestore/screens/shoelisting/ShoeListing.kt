@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -60,6 +61,10 @@ class ShoeListing : Fragment() {
             }
         }
 
+
+        //Add title to toolbar
+
+        (activity as AppCompatActivity).supportActionBar?.title  = "Shoe Listing"
 
         return binding.root
     }

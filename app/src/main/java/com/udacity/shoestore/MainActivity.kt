@@ -16,9 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Timber.plant(Timber.DebugTree())
-
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val navController = findNavController(R.id.nav_host_fragment)
-       val appBarConfig = AppBarConfiguration(setOf())
+       val appBarConfig = AppBarConfiguration(setOf(R.id.instructionsFragment))
 
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfig)
     }
