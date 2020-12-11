@@ -1,14 +1,15 @@
 package com.udacity.shoestore.screens.shoelisting
 
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListingBinding
@@ -18,10 +19,10 @@ import timber.log.Timber
 
 
 class ShoeListing : Fragment() {
-    private lateinit var binding:FragmentShoeListingBinding
+    private lateinit var binding: FragmentShoeListingBinding
 
 
-private val sharedViewModel:SharedViewModel by activityViewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentShoeListingBinding.inflate(inflater)
@@ -35,37 +36,26 @@ private val sharedViewModel:SharedViewModel by activityViewModels()
 
         //observe Navigation event
 
-        sharedViewModel.eventNavigateToShoeDetail.observe(viewLifecycleOwner  ){
+        sharedViewModel.eventNavigateToShoeDetail.observe(viewLifecycleOwner) {
 
-            eventNavigate  ->
+            eventNavigate ->
 
-            if (eventNavigate){
+            if (eventNavigate) {
 
-Timber.i("at listing observatory Nav to Detail is $eventNavigate")
+                Timber.i("at listing observatory Nav to Detail is $eventNavigate")
                 findNavController().navigate(ShoeListingDirections.actionShoeListingToShoeDetailFragment())
                 sharedViewModel.onNavigateToDetailFragmentComplete()
             }
         }
 
-        sharedViewModel.shoeList.observe(viewLifecycleOwner){
+        sharedViewModel.shoeList.observe(viewLifecycleOwner) {
 
             newShoeList ->
 
-            if (newShoeList.isNotEmpty()){
+            if (newShoeList.isNotEmpty()) {
 
 
-                val button1 = Button(context)
-                button1.text = "Press Me1"
-                linearLayout.addView(button1)
-                val button2 = Button(context)
-                button2.text = "Press Me2"
-                linearLayout.addView(button2)
-
-                val button3 = Button(context)
-                button3.text = "Press Me3"
-                linearLayout.addView(button3)
-
-
+                newShoeList.forEachIndexed { _, shoe -> createShoeLabel(shoe) }
             }
         }
 
@@ -74,17 +64,51 @@ Timber.i("at listing observatory Nav to Detail is $eventNavigate")
     }
 
 
+    private fun createShoeLabel(shoe: Shoe) {
 
-    fun createTextViews(shoeList:MutableList<Shoe>){
+        //val shoe = shoeList.last()
+        createTextLabel(shoe.name)
+        createTextLabel(shoe.size.toString())
+        createTextLabel(shoe.company)
+        createTextLabel(shoe.description)
+        insertBoarder()
+    }
+
+    private fun createTextLabel(label: String) {
 
 
-
-
-            val textView = TextView(context)
-        }
-
-
+        val textView = TextView(context)
+        val params =
+                LinearLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        params.setMargins(0, 0, 0, 30)
+        params.gravity = Gravity.CENTER
+        textView.layoutParams = params
+        textView.text = label
+        linearLayout.addView(textView)
 
     }
+
+
+private fun insertBoarder(){
+    val textView = TextView(context)
+    val params =
+            LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+    params.setMargins(0, 0, 0, 30)
+    params.gravity = Gravity.CENTER
+    textView.layoutParams = params
+    textView.height = 5
+    textView.setBackgroundColor(Color.GREEN)
+    linearLayout.addView(textView)
+
+
+}
+
+}
+
+
+
+
 
 
