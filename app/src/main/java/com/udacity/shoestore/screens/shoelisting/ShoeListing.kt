@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListingBinding
+import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_shoe_listing.*
 import timber.log.Timber
 
@@ -73,5 +75,16 @@ Timber.i("at listing observatory Nav to Detail is $eventNavigate")
 
 
 
+    fun createTextViews(shoeList:MutableList<Shoe>){
 
-}
+
+
+
+            val textView = TextView(context)
+        }
+
+
+
+    }
+
+
