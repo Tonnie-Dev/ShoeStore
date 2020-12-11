@@ -24,20 +24,11 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-   /* override fun setActionBar(toolbar: Toolbar?) {
-        super.setActionBar(toolbar)
 
 
-        val navController = findNavController(R.id.nav_host_fragment)
-
-        navController.navigateUp()
-
-    }*/
-
-
-   /* override fun onSupportNavigateUp(): Boolean {
+    override fun onSupportNavigateUp(): Boolean {
 
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp()
-    }*/
+    }
 }
