@@ -31,6 +31,10 @@
     <string name="company_name_label_text">Company:</string>
     <string name="shoe_size_label_text">Size:</string>
     <string name="shoe_desc_label_text">Description:</string>
+    <string name="styled_shoe_name"><b>Name:</b>    %s    </string>
+    <string name="styled_company_name"><b>Name:</b> </string>
+    <string name="styled_size"><b>Name:</b> </string>
+    <string name="styled_description"><b>Name:</b> </string>
 
 
 </resources>
