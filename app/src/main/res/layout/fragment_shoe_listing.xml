@@ -6,7 +6,6 @@
     <data>
 
 
-
         <variable
             name="sharedViewModel"
             type="com.udacity.shoestore.screens.shoelisting.SharedViewModel" />
@@ -107,17 +106,17 @@
                             style="@style/TextAppearance.MaterialComponents.Subtitle2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
-                            android:text="TextView" />
+                            android:text="@{sharedViewModel.name}" />
 
                         <TextView
                             android:id="@+id/companyTextView"
                             style="@style/TextAppearance.MaterialComponents.Subtitle2"
                             android:layout_width="match_parent"
-                            android:layout_marginStart="16dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
                             android:text="TextView" />
@@ -126,8 +125,8 @@
                             android:id="@+id/sizeTextView"
                             style="@style/TextAppearance.MaterialComponents.Subtitle2"
                             android:layout_width="match_parent"
-                            android:layout_marginStart="16dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
                             android:text="TextView" />
@@ -136,8 +135,8 @@
                             android:id="@+id/descTextView"
                             style="@style/TextAppearance.MaterialComponents.Subtitle2"
                             android:layout_width="match_parent"
-                            android:layout_marginStart="16dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
                             android:text="TextView" />

@@ -31,6 +31,7 @@
         <EditText
             android:id="@+id/editTextShoeName"
             android:layout_width="0dp"
+            android:text="@={sharedViewModel._edShoeName}"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"

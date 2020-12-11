@@ -60,6 +60,7 @@
             android:id="@+id/action_shoeDetailFragment_to_shoeListing"
             app:destination="@id/shoeListing"
             app:enterAnim="@anim/slide_in_anim"
+            app:exitAnim="@anim/slide_out_anim"
             app:popUpTo="@id/shoeListing" />
     </fragment>
 </navigation>

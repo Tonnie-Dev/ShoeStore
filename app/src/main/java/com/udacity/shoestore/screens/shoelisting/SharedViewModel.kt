@@ -1,5 +1,6 @@
 package com.udacity.shoestore.screens.shoelisting
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -30,14 +31,28 @@ class SharedViewModel : ViewModel() {
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList
 
+ private val _name = MutableLiveData<String>()
+    val name:LiveData<String>
+    get() = _name
+
+    var _edShoeName =""
+
+
     init {
 
         _shoeList.value = mutableListOf()
-       // _eventNavigateToShoeDetail.value = false
+        _eventNavigateToShoeDetail.value = false
         _eventNavigateBackToListing.value = false
-        //_eventNavigateToShoeDetailCompleted.value = false
+        _eventNavigateToShoeDetailCompleted.value = false
+        _name.value = ""
 
     }
+
+
+
+
+
+
 //SHOE_LISTING_FRAGMENT_METHODS
 
     fun onEditFabButtonClick() {
@@ -59,6 +74,7 @@ class SharedViewModel : ViewModel() {
 
         _eventNavigateBackToListing.value = true
 
+_name.value = _edShoeName
     }
 
     fun onCancelButtonClick() {
