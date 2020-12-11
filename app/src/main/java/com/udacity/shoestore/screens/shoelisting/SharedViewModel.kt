@@ -80,6 +80,11 @@ class SharedViewModel : ViewModel() {
     //SHOE_DETAIL_FRAGMENT_METHODS
     fun onSaveButtonClick() {
 
+       if (edSize==""){
+
+           edSize="0"
+       }
+
         _eventNavigateBackToListing.value = true
 
         //update MutableLiveData with values on the EditText
