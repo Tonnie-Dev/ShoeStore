@@ -1,6 +1,5 @@
 package com.udacity.shoestore.screens.shoelisting
 
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,22 +19,36 @@ class SharedViewModel : ViewModel() {
         get() = _eventNavigateToShoeDetailCompleted
 
 
-
     //EVENT_NAVIGATE_BACK_TO_SHOE_LISTING
     private val _eventNavigateBackToListing = MutableLiveData<Boolean>()
-    val eventNavigateBackToListing:LiveData<Boolean>
-    get() = _eventNavigateBackToListing
+    val eventNavigateBackToListing: LiveData<Boolean>
+        get() = _eventNavigateBackToListing
 
     //SHOE_LIST
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList: LiveData<MutableList<Shoe>>
         get() = _shoeList
 
- private val _name = MutableLiveData<String>()
-    val name:LiveData<String>
-    get() = _name
+    private val _name = MutableLiveData<String>()
+    val name: LiveData<String>
+        get() = _name
+    var edShoeName = ""
 
-    var _edShoeName =""
+    private val _size = MutableLiveData<Double>()
+    val size: LiveData<Double>
+        get() = _size
+    var edSize = ""
+
+    private val _company = MutableLiveData<String>()
+    val company: LiveData<String>
+        get() = _company
+    var edCompany = ""
+
+    private val _description = MutableLiveData<String>()
+    val description:LiveData<String>
+    get() = _description
+
+    var edDescription = ""
 
 
     init {
@@ -49,11 +62,7 @@ class SharedViewModel : ViewModel() {
     }
 
 
-
-
-
-
-//SHOE_LISTING_FRAGMENT_METHODS
+    //SHOE_LISTING_FRAGMENT_METHODS
 
     fun onEditFabButtonClick() {
         _eventNavigateToShoeDetail.value = true
@@ -61,12 +70,11 @@ class SharedViewModel : ViewModel() {
 
     }
 
-    fun onNavigateToDetailFragmentComplete(){
-        _eventNavigateToShoeDetail.value =false
+    fun onNavigateToDetailFragmentComplete() {
+        _eventNavigateToShoeDetail.value = false
         _eventNavigateBackToListing.value = false
         Timber.i("Nav Value to DetailFragment ${_eventNavigateToShoeDetail.value}")
     }
-
 
 
     //SHOE_DETAIL_FRAGMENT_METHODS
@@ -74,15 +82,20 @@ class SharedViewModel : ViewModel() {
 
         _eventNavigateBackToListing.value = true
 
-_name.value = _edShoeName
+        //update MutableLiveData with values on the EditText
+        _name.value = edShoeName
+        _size.value = edSize.toDouble()
+        _company.value = edCompany
+        _description.value = edDescription
+
+        //add a new shoeList Element
+
+
     }
 
     fun onCancelButtonClick() {
         _eventNavigateBackToListing.value = true
     }
-
-
-
 
 
     override fun onCleared() {

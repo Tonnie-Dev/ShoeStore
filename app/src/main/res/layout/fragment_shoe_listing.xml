@@ -119,7 +119,7 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
-                            android:text="TextView" />
+                            android:text="@{sharedViewModel.company}" />
 
                         <TextView
                             android:id="@+id/sizeTextView"
@@ -129,7 +129,7 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
-                            android:text="TextView" />
+                            android:text="@{sharedViewModel.size.toString()}" />
 
                         <TextView
                             android:id="@+id/descTextView"
@@ -139,7 +139,7 @@
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
-                            android:text="TextView" />
+                            android:text="@{sharedViewModel.description}" />
                     </LinearLayout>
 
 
