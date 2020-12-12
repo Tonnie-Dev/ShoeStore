@@ -20,20 +20,20 @@
             style="@style/TextAppearance.MaterialComponents.Headline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="100dp"
+            android:fontFamily="@font/maven_pro"
             android:text="@string/instructions_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/instructionsMsgLabel"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/my_subtitletext_style"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:text="@string/instructions_msg"
+            android:textAlignment="viewStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,15 +41,18 @@
 
         <Button
             android:id="@+id/buttonContinue"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="320dp"
-            android:text="@string/continue_button_text"
+            android:layout_marginStart="75dp"
+            style="@style/my_buttons_style"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="64dp"
             android:background="@drawable/custom_button_background"
             android:onClick="@{()-> viewModel.onNavigateToShoeListingFragment()}"
+            android:text="@string/continue_button_text"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instructionsMsgLabel" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

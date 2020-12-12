@@ -17,14 +17,10 @@
 
         <TextView
             android:id="@+id/emailTextLabel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="75dp"
-            android:paddingStart="@dimen/textlabel_padding"
-            android:layout_marginTop="116dp"
+            style="@style/my_textlabels_style"
+            android:layout_marginTop="192dp"
             android:layout_marginEnd="278dp"
             android:text="@string/email_text_label"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,11 +28,11 @@
 
         <EditText
             android:id="@+id/emailEditText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/edittext_height"
             android:layout_marginStart="75dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="126dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="75dp"
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/custom_email_icon"
             android:drawablePadding="@dimen/padding_drawable"
@@ -55,10 +51,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="278dp"
-            android:text="@string/password_text_label"
             android:paddingStart="@dimen/textlabel_padding"
+            android:paddingEnd="@dimen/textlabel_padding"
+            android:text="@string/password_text_label"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -67,11 +64,11 @@
 
         <EditText
             android:id="@+id/passwordEditText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="@dimen/edittext_height"
             android:layout_marginStart="75dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="126dp"
+            android:layout_marginEnd="75dp"
             android:background="@drawable/custom_input"
             android:drawableStart="@drawable/custom_password_icon"
             android:drawablePadding="@dimen/padding_drawable"
@@ -87,27 +84,24 @@
 
         <Button
             android:id="@+id/signUpButton"
+            style="@style/my_buttons_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-            android:layout_marginStart="72dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/custom_button_background"
+            android:layout_marginStart="75dp"
+            android:layout_marginBottom="64dp"
             android:onClick="@{()-> viewModel.onNavigateToWelcomeScreen()}"
             android:text="@string/sign_up_text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/signInButton"
+            style="@style/my_buttons_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="126dp"
-            android:textAllCaps="false"
-            android:background="@drawable/custom_button_background"
+            android:layout_marginEnd="75dp"
             android:onClick="@{() -> viewModel.onNavigateToWelcomeScreen()}"
             android:text="@string/sign_in_text"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/signUpButton" />
     </androidx.constraintlayout.widget.ConstraintLayout>

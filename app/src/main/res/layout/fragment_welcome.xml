@@ -17,44 +17,47 @@
 
         <TextView
             android:id="@+id/welcomeHeaderLabel"
-            style="@style/TextAppearance.MaterialComponents.Headline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="232dp"
+
+            android:layout_marginTop="124dp"
+            android:fontFamily="@font/maven_pro"
             android:text="@string/welcome_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/welcomeMsgLabel"
-            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/my_subtitletext_style"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:text="@string/welcome_message"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toTopOf="@+id/getStartedButton"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeHeaderLabel" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/getStartedButton"
-            android:layout_width="wrap_content"
+            style="@style/my_buttons_style"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="57dp"
-            android:text="@string/get_started_button_text"
-            android:background="@drawable/custom_button_background"
+            android:layout_marginStart="75dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="75dp"
+
+            android:drawableEnd="@drawable/ic_go_arrow"
             android:onClick="@{()-> viewModel.onNavigateToInstructionsFragment()}"
+            android:paddingEnd="10dp"
+            android:text="@string/get_started_button_text"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcomeMsgLabel" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
