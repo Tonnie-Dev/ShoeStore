@@ -25,7 +25,7 @@ class ShoeListing : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentShoeListingBinding.inflate(inflater)
 
-        Timber.i(" listing onCreateView called")
+
         //bind layout to the ViewModel
         binding.sharedViewModel = sharedViewModel
 
@@ -38,8 +38,6 @@ class ShoeListing : Fragment() {
             eventNavigate ->
 
             if (eventNavigate) {
-
-                Timber.i("at listing observatory Nav to Detail is $eventNavigate")
                 findNavController().navigate(ShoeListingDirections.actionShoeListingToShoeDetailFragment())
                 sharedViewModel.onNavigateToDetailFragmentComplete()
             }

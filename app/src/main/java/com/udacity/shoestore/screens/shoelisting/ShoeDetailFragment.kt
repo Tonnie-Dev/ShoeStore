@@ -21,7 +21,7 @@ class ShoeDetailFragment : Fragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        Timber.i(" detail onCreateView called")
+
         binding = FragmentShoeDetailBinding.inflate(inflater)
 
         val vm = ViewModelProvider(this).get(sharedViewModel::class.java)
