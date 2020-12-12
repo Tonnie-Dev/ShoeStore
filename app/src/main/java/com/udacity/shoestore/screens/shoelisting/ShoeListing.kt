@@ -63,6 +63,10 @@ class ShoeListing : Fragment() {
         //Add title to toolbar
         (activity as AppCompatActivity).supportActionBar?.title = "Shoe Listing"
 
+        //set has options menu to true
+
+        setHasOptionsMenu(true)
+
         return binding.root
     }
 
