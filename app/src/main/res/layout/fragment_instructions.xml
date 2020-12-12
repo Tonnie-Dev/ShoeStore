@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--use <layout> tag to support Data Binding-->
 
-<!--using layout and constraint layout to constrain views and support data binding-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -11,7 +11,8 @@
             name="viewModel"
             type="com.udacity.shoestore.screens.instructions.InstructionsViewModel" />
     </data>
-
+    <!--constraint is used here to maintain a bottom margin of 64dp which matches the other buttons
+    on the app. It also holds the instruction textviews in precise positions-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

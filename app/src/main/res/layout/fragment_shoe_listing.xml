@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--use <layout> tag to support Data Binding-->
 
-<!--using layout and constraint layout to constrain views and support data binding-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -13,7 +13,9 @@
             type="com.udacity.shoestore.screens.shoelisting.SharedViewModel" />
 
     </data>
-
+    <!--Constraint layout chosen to easily align the ScrollView to the edges of the parent layout
+    . At the same time constrain layout allow the FAB button to be placed neatly into the
+    bottom-right corner-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,7 +36,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
+<!--Linear Layout used to allow positioning of shoe items vertically one after the other in a
+predictable manner especially for Dynamic creation of the shoe items-->
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:paddingTop="50dp"

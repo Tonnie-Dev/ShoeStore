@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--using layout and constraint layout to constrain views and support data binding-->
+<!--use <layout> tag to support Data Binding-->
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -9,7 +10,9 @@
     name="sharedViewModel"
     type="com.udacity.shoestore.screens.shoelisting.SharedViewModel" />
     </data>
-
+    <!--With several views involved, constraintLayout does well to place the TextView-EditText
+    pairs on top of each other making it easy to replicate this pattern. It also takes care of
+    bottom bottom margin to match other buttons in the app-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

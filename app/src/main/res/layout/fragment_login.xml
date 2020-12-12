@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--use <layout> tag to support Data Binding-->
 
-<!--using layout and constraint layout to constrain views and support data binding-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <!--using constraint layout to accurately position EditTexts and Buttons within the parent
+    and also easily adjust the start and end margins for TextLabel-EditText pairs-->
     <data>
         <variable
             name="viewModel"

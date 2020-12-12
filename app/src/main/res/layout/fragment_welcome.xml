@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--use <layout> tag to support Data Binding-->
 
-<!--using layout and constraint layout to constrain views and support data binding-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -11,7 +11,9 @@
             name="viewModel"
             type="com.udacity.shoestore.screens.welcome.WelcomeViewModel" />
     </data>
-
+    <!--using constraint layout to centre the buttons and textViews horizontally and also specify
+     margin top and bottom easily finding the views' position
+     -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
