@@ -49,7 +49,11 @@
             app:enterAnim="@anim/slide_in_anim"
             app:exitAnim="@anim/slide_out_anim"
             app:popEnterAnim="@anim/slide_in_anim"
-            app:popExitAnim="@anim/slide_out_anim" />
+            app:popExitAnim="@anim/slide_out_anim"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_shoeListing_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
@@ -62,7 +66,6 @@
             app:enterAnim="@anim/slide_in_anim"
             app:exitAnim="@android:anim/slide_out_right"
             app:popEnterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_in_left"
-            app:popUpTo="@id/shoeListing" />
+            app:popExitAnim="@android:anim/slide_in_left" />
     </fragment>
 </navigation>

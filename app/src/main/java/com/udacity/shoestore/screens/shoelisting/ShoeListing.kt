@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -62,6 +63,8 @@ class ShoeListing : Fragment() {
         //set has options menu to true
 
         setHasOptionsMenu(true)
+
+
 
         return binding.root
     }
@@ -130,7 +133,15 @@ class ShoeListing : Fragment() {
                 .onOptionsItemSelected(item)
 
     }
-}
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+      val callback = requireActivity().onBackPressedDispatcher.addCallback(this){
+findNavController().navigate(ShoeListingDirections.actionShoeListingToLoginFragment())
+      }
+}}
 
 
 
