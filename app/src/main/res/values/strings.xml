@@ -29,6 +29,7 @@
     <string name="shoe_description_text">Shoe Description</string>
     <string name="shoe_description_hint">Enter Shoe Description</string>
     <string name="save_button_text">Save</string>
+    <string name="log_out_text">Log Off</string>
     <string name="cancel_button_text">Cancel</string>
     <string name="name_text_label">Shoe Name:</string>
     <string name="company_name_label_text">Company:</string>
@@ -38,6 +39,7 @@
     <string name="styled_company_name"><b>Company:</b> %s</string>
     <string name="styled_size"><b>Size:</b>  %.1f</string>
     <string name="styled_description"><b>Description:</b> %s</string>
+
 
 
 </resources>

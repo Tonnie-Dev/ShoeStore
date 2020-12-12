@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
        //appConfig
        val appBarConfig = AppBarConfiguration(setOf(R.id.loginFragment, R.id.welcomeFragment, R.id
-               .instructionsFragment, R.id.shoeListing))
+               .instructionsFragment,R.id.shoeListing))
         // setup the nav controller with the toolbar and an AppBarConfiguration
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfig)
     }
