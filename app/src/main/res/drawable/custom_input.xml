@@ -3,14 +3,13 @@
 
     <!--1st item to be used when editText has focus-->
 
-    <item
-        android:state_enabled="true" android:state_focused="true">
+    <item android:state_enabled="true" android:state_focused="true">
 
         <shape android:shape="rectangle">
 
-            <solid android:color="@android:color/white"/>
-            <corners android:radius="@dimen/corner_radius"/>
-            <stroke android:color="@color/colorAccent" android:width="@dimen/stroke_width"/>
+            <solid android:color="@android:color/white" />
+            <corners android:radius="@dimen/corner_radius" />
+            <stroke android:width="@dimen/stroke_width" android:color="@color/colorAccent" />
         </shape>
 
     </item>
@@ -21,15 +20,14 @@
 
     <item android:state_enabled="true">
 
-<shape android:shape="rectangle">
+        <shape android:shape="rectangle">
 
-<solid android:color="@android:color/white"/>
-    <corners android:radius="@dimen/corner_radius"/>
-    <stroke  android:color="@color/colorPrimary" android:width="@dimen/stroke_width"/>
+            <solid android:color="@android:color/white" />
+            <corners android:radius="@dimen/corner_radius" />
+            <stroke android:width="@dimen/stroke_width" android:color="@color/colorPrimary" />
 
 
-</shape>
-
+        </shape>
 
 
     </item>
