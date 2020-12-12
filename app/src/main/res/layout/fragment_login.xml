@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="viewModel"
-    type="com.udacity.shoestore.screens.login.LoginViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.screens.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -33,15 +34,15 @@
             android:layout_height="@dimen/edittext_height"
             android:layout_marginStart="75dp"
             android:layout_marginTop="16dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
             android:layout_marginEnd="126dp"
-            android:drawableStart="@drawable/ic_email"
-            android:ems="10"
             android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/custom_email_icon"
             android:drawablePadding="@dimen/padding_drawable"
+            android:ems="10"
             android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,11 +51,9 @@
         <TextView
             android:id="@+id/passwordTextLabel"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
             android:layout_marginTop="64dp"
-
             android:layout_marginEnd="278dp"
             android:text="@string/password_text_label"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,18 +64,18 @@
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="wrap_content"
-            android:drawablePadding="@dimen/padding_drawable"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
+            android:layout_height="@dimen/edittext_height"
             android:layout_marginStart="75dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="126dp"
-            android:layout_height="@dimen/edittext_height"
-            android:drawableStart="@drawable/ic_lock"
-            android:ems="10"
             android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/custom_password_icon"
+            android:drawablePadding="@dimen/padding_drawable"
+            android:ems="10"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
