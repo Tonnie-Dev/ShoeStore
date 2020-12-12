@@ -22,7 +22,7 @@
     <string name="fab_content_desc">See Shoe Details</string>
     <string name="shoe_name_text_label">Shoe Name</string>
     <string name="shoe_name_hint">Enter Shoe Name</string>
-    <string name="company_name_text_label">Company Name</string>
+    <string name="company_name_text_label">Shoe Company</string>
     <string name="company_name_hint">Enter Company Name</string>
     <string name="shoe_size_text_label">Shoe Size</string>
     <string name="shoe_size_hint">Enter Shoe Size</string>

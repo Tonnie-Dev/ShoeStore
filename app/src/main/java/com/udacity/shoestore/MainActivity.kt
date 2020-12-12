@@ -16,12 +16,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Timber.plant(Timber.DebugTree())
+
+        //set toolbar using android ext lib
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        //find nav controller
         val navController = findNavController(R.id.nav_host_fragment)
+
+       //appConfig
        val appBarConfig = AppBarConfiguration(setOf(R.id.loginFragment, R.id.welcomeFragment, R.id
                .instructionsFragment, R.id.shoeListing))
-
+        // setup the nav controller with the toolbar and an AppBarConfiguration
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfig)
     }
 

@@ -8,6 +8,11 @@ import timber.log.Timber
 
 class SharedViewModel : ViewModel() {
 
+    //SHOE_LIST
+    private val _shoeList = MutableLiveData<MutableList<Shoe>>()
+    val shoeList: LiveData<MutableList<Shoe>>
+        get() = _shoeList
+
     //EVENT_NAVIGATE_TO_DETAIL_FRAGMENT
     private val _eventNavigateToShoeDetail = MutableLiveData<Boolean>()
     val eventNavigateToShoeDetail: LiveData<Boolean>
@@ -24,11 +29,8 @@ class SharedViewModel : ViewModel() {
     val eventNavigateBackToListing: LiveData<Boolean>
         get() = _eventNavigateBackToListing
 
-    //SHOE_LIST
-    private val _shoeList = MutableLiveData<MutableList<Shoe>>()
-    val shoeList: LiveData<MutableList<Shoe>>
-        get() = _shoeList
 
+    //OTHER VARIABLES - name, size, company & description
     private val _name = MutableLiveData<String>()
     val name: LiveData<String>
         get() = _name
@@ -45,12 +47,12 @@ class SharedViewModel : ViewModel() {
     var edCompany = ""
 
     private val _description = MutableLiveData<String>()
-    val description:LiveData<String>
-    get() = _description
+    val description: LiveData<String>
+        get() = _description
 
     var edDescription = ""
 
-
+    //INIT_BLOCK
     init {
 
         _shoeList.value = mutableListOf()
@@ -80,21 +82,22 @@ class SharedViewModel : ViewModel() {
     //SHOE_DETAIL_FRAGMENT_METHODS
     fun onSaveButtonClick() {
 
-       if (edSize==""){
+        //check value entered for size and set it to 0 if blank
+        if (edSize == "") {
 
-           edSize="0"
-       }
+            edSize = "0"
+        }
 
         _eventNavigateBackToListing.value = true
 
-        //update MutableLiveData with values on the EditText
+        //update MutableLiveData with values from the EditText
         _name.value = edShoeName
         _size.value = edSize.toDouble()
         _company.value = edCompany
         _description.value = edDescription
 
-        //add a new shoeList Element
-_shoeList.value?.add(Shoe(edShoeName, edSize.toDouble(),edCompany,edDescription))
+        //save shoeObject to the _shoeList MutableLiveData
+        _shoeList.value?.add(Shoe(edShoeName, edSize.toDouble(), edCompany, edDescription))
 
     }
 

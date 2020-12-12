@@ -1,6 +1,5 @@
 package com.udacity.shoestore.screens.shoelisting
 
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -36,7 +35,6 @@ class ShoeListing : Fragment() {
         binding.lifecycleOwner = this
 
         //observe Navigation event
-
         sharedViewModel.eventNavigateToShoeDetail.observe(viewLifecycleOwner) {
 
             eventNavigate ->
@@ -56,26 +54,27 @@ class ShoeListing : Fragment() {
 
             if (newShoeList.isNotEmpty()) {
 
-
+                //inflate  each shoe on the list
                 newShoeList.forEach { shoe -> inflateShoeLabels(shoe) }
             }
         }
 
 
         //Add title to toolbar
-
-        (activity as AppCompatActivity).supportActionBar?.title  = "Shoe Listing"
+        (activity as AppCompatActivity).supportActionBar?.title = "Shoe Listing"
 
         return binding.root
     }
 
-//draw 4 textViews with Labels and insert border
+    //create layout item with respective textView value insert border
     private fun inflateShoeLabels(shoe: Shoe) {
 
         createTextLabel(getString(R.string.styled_shoe_name, shoe.name))
         createTextLabel(getString(R.string.styled_size, shoe.size))
         createTextLabel(getString(R.string.styled_company_name, shoe.company))
         createTextLabel(getString(R.string.styled_description, shoe.description))
+
+        //insert border between items
         insertBorder()
     }
 
@@ -84,34 +83,39 @@ class ShoeListing : Fragment() {
 
 
         val textView = TextView(context)
-        val params =
-                LinearLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        //params to position the text view
+        val params = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         params.setMargins(0, 0, 0, 30)
         params.gravity = Gravity.CENTER
         textView.layoutParams = params
+
         textView.text = label
         linearLayout.addView(textView)
 
     }
 
-//insert border between shoe objects
-private fun insertBorder(){
-    val textView = TextView(context)
-    val params =
-            LinearLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-    params.setMargins(0, 0, 0, 30)
-    params.gravity = Gravity.CENTER
-    textView.layoutParams = params
+    //insert border between shoe objects
+    private fun insertBorder() {
+        val textView = TextView(context)
 
-    textView.height = 2
+        //params to position border text view
+        val params = LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        params.setMargins(0, 0, 0, 30)
+        params.gravity = Gravity.CENTER
+        textView.layoutParams = params
 
-    textView.setBackgroundColor(resources.getColor(R.color.colorAccent))
-    linearLayout.addView(textView)
+        //border height
+        textView.height = 2
 
 
-}
+        //background color
+        textView.setBackgroundColor(resources.getColor(R.color.colorAccent))
+        linearLayout.addView(textView)
+
+
+    }
 
 }
 
