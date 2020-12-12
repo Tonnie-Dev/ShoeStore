@@ -1,5 +1,6 @@
 package com.udacity.shoestore.screens.shoelisting
 
+import android.content.res.Resources
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
@@ -105,7 +106,7 @@ private fun insertBorder(){
     params.gravity = Gravity.CENTER
     textView.layoutParams = params
     textView.height = 2
-    textView.setBackgroundColor(Color.GREEN)
+    textView.setBackgroundColor(resources.getColor(R.color.colorPrimary))
     linearLayout.addView(textView)
 
 

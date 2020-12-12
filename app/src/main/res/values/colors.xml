@@ -10,9 +10,9 @@
 
 
     <color name="colorPrimary">#29b6f6</color>
-    <color name="colorPrimaryDark">#73e8ff</color>
+    <color name="colorPrimaryDark">#0086c3</color>
     <color name="primaryDarkColor">#0086c3</color>
-    <color name="colorAccent">#f66d29</color>
+    <color name="colorAccent">#f46c28</color>
     <color name="secondaryColor">#f66d29</color>
     <color name="secondaryLightColor">#ff9e58</color>
     <color name="secondaryDarkColor">#bc3d00</color>
@@ -20,3 +20,4 @@
     <color name="secondaryTextColor">#000000</color>
 
 </resources>
+<!--#73e8ff-->

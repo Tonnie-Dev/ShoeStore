@@ -19,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val navController = findNavController(R.id.nav_host_fragment)
-       val appBarConfig = AppBarConfiguration(setOf(R.id.loginFragment))
+       val appBarConfig = AppBarConfiguration(setOf(R.id.loginFragment, R.id.welcomeFragment, R.id
+               .instructionsFragment, R.id.shoeListing))
 
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfig)
     }
