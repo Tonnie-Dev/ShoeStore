@@ -1,7 +1,6 @@
 package com.udacity.shoestore.screens.shoelisting
 
-import android.content.res.Resources
-import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -75,7 +74,7 @@ class ShoeListing : Fragment() {
 
         createTextLabel(getString(R.string.styled_shoe_name, shoe.name))
         createTextLabel(getString(R.string.styled_size, shoe.size))
-        createTextLabel(getString(R.string.styled_company_name,shoe.company))
+        createTextLabel(getString(R.string.styled_company_name, shoe.company))
         createTextLabel(getString(R.string.styled_description, shoe.description))
         insertBorder()
     }
@@ -105,8 +104,10 @@ private fun insertBorder(){
     params.setMargins(0, 0, 0, 30)
     params.gravity = Gravity.CENTER
     textView.layoutParams = params
+
     textView.height = 2
-    textView.setBackgroundColor(resources.getColor(R.color.colorPrimary))
+
+    textView.setBackgroundColor(resources.getColor(R.color.colorAccent))
     linearLayout.addView(textView)
 
 

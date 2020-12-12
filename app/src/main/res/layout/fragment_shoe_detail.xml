@@ -16,11 +16,8 @@
 
         <TextView
             android:id="@+id/shoeNameTextLabel"
-            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="96dp"
+            style="@style/my_textlabels_style"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="16dp"
             android:text="@string/shoe_name_text_label"
             app:layout_constraintBottom_toTopOf="@+id/editTextShoeName"
@@ -30,13 +27,9 @@
 
         <EditText
             android:id="@+id/editTextShoeName"
-            android:layout_width="0dp"
             android:text="@={sharedViewModel.edShoeName}"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            style="@style/my_edittexts_style"
             android:hint="@string/shoe_name_hint"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,10 +39,7 @@
 
         <TextView
             android:id="@+id/shoeCompanyTextLabel"
-            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            style="@style/my_textlabels_style"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:text="@string/company_name_text_label"
@@ -59,12 +49,8 @@
 
         <EditText
             android:id="@+id/editTextCompanyName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            style="@style/my_edittexts_style"
             android:text="@={sharedViewModel.edCompany}"
             android:hint="@string/company_name_hint"
             android:inputType="textPersonName"
@@ -74,10 +60,7 @@
 
         <TextView
             android:id="@+id/shoeSizeTextLabel"
-            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            style="@style/my_textlabels_style"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:text="@string/shoe_size_text_label"
@@ -87,12 +70,8 @@
 
         <EditText
             android:id="@+id/editTextShoeSize"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            style="@style/my_edittexts_style"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
             android:text="@={sharedViewModel.edSize}"
             android:hint="@string/shoe_size_hint"
             android:inputType="number"
@@ -102,10 +81,7 @@
 
         <TextView
             android:id="@+id/shoeDescLabel"
-            style="@style/TextAppearance.MaterialComponents.Subtitle2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            style="@style/my_textlabels_style"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:text="@string/shoe_description_text"
@@ -115,12 +91,8 @@
 
         <EditText
             android:id="@+id/editTextShoeDesc"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            style="@style/my_edittexts_style"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
             android:text="@={sharedViewModel.edDescription}"
             android:hint="@string/shoe_description_hint"
             android:inputType="textPersonName"
@@ -131,11 +103,11 @@
         <Button
             android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
-            android:onClick="@{()->sharedViewModel.onSaveButtonClick()}"
             android:layout_height="wrap_content"
             android:layout_marginStart="75dp"
+            android:layout_marginBottom="75dp"
             android:background="@drawable/custom_button_background"
-            android:layout_marginBottom="128dp"
+            android:onClick="@{()->sharedViewModel.onSaveButtonClick()}"
             android:text="@string/save_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/buttonCancel"
@@ -145,12 +117,12 @@
         <Button
             android:id="@+id/buttonCancel"
             android:layout_width="wrap_content"
-            android:onClick="@{() ->sharedViewModel.onCancelButtonClick()}"
             android:layout_height="wrap_content"
             android:layout_marginEnd="75dp"
-            android:layout_marginBottom="128dp"
-            android:text="@string/cancel_button_text"
+            android:layout_marginBottom="75dp"
             android:background="@drawable/custom_button_background"
+            android:onClick="@{() ->sharedViewModel.onCancelButtonClick()}"
+            android:text="@string/cancel_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
