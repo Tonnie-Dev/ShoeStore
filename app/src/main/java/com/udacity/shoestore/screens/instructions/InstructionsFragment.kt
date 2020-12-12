@@ -28,7 +28,7 @@ private lateinit var viewModel: InstructionsViewModel
         //initialize viewModel
         viewModel = ViewModelProvider(this).get(InstructionsViewModel::class.java)
 
-        (activity as AppCompatActivity).supportActionBar?.title = "Instructions"
+
 
 
 
@@ -51,8 +51,8 @@ private lateinit var viewModel: InstructionsViewModel
 
         }
         }
-
-
+        //Add title to toolbar
+        (activity as AppCompatActivity).supportActionBar?.title = "Instructions"
         return binding.root
     }
 
