@@ -54,6 +54,7 @@
         <item name="android:layout_height">@dimen/edittext_height</item>
         <item name="android:layout_marginStart">75dp</item>
         <item name="android:layout_marginEnd">75dp</item>
+        <item name="android:fontFamily">@font/maven_pro</item>
         <item name="android:background">@drawable/custom_input</item>
         <item name="android:ems">10</item>
         <item name="android:paddingStart">12dp</item>

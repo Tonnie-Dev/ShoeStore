@@ -48,7 +48,7 @@
             app:destination="@id/shoeDetailFragment"
             app:enterAnim="@anim/slide_in_anim"
             app:exitAnim="@anim/slide_out_anim"
-            app:popEnterAnim="@anim/slide_in_anim"
+            app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_anim" />
     </fragment>
     <fragment
@@ -60,7 +60,9 @@
             android:id="@+id/action_shoeDetailFragment_to_shoeListing"
             app:destination="@id/shoeListing"
             app:enterAnim="@anim/slide_in_anim"
-            app:exitAnim="@anim/slide_out_anim"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_in_left"
             app:popUpTo="@id/shoeListing" />
     </fragment>
 </navigation>
