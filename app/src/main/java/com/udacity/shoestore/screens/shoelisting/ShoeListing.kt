@@ -1,11 +1,15 @@
 package com.udacity.shoestore.screens.shoelisting
 
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
+import android.text.Spanned
 import android.view.*
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -72,17 +76,19 @@ class ShoeListing : Fragment() {
     //create layout item with respective textView value insert border
     private fun inflateShoeLabels(shoe: Shoe) {
 
-        createTextLabel(getString(R.string.styled_shoe_name, shoe.name))
-        createTextLabel(getString(R.string.styled_size, shoe.size))
-        createTextLabel(getString(R.string.styled_company_name, shoe.company))
-        createTextLabel(getString(R.string.styled_description, shoe.description))
+
+        val sizeString =doubleToString(shoe.size)
+        createTextLabel(getString(R.string.styled_shoe_name), shoe.name)
+        createTextLabel(getString(R.string.styled_size), sizeString)
+        createTextLabel(getString(R.string.styled_company_name), shoe.company)
+        createTextLabel(getString(R.string.styled_description), shoe.description)
 
         //insert border between items
         insertBorder()
     }
 
     //draw one textView
-    private fun createTextLabel(label: String) {
+    private fun createTextLabel(boldLabel: String, subtext:String) {
 
 
         val textView = TextView(context)
@@ -93,7 +99,7 @@ class ShoeListing : Fragment() {
         params.gravity = Gravity.CENTER
         textView.layoutParams = params
 
-        textView.text = label
+        textView.text = formatText(boldLabel, subtext)
         linearLayout.addView(textView)
 
     }
@@ -141,7 +147,36 @@ class ShoeListing : Fragment() {
       val callback = requireActivity().onBackPressedDispatcher.addCallback(this){
 findNavController().navigate(ShoeListingDirections.actionShoeListingToLoginFragment())
       }
-}}
+}
+
+fun formatText (s1:String, s2:String): Spanned{
+    val sb = StringBuilder()
+
+    sb.apply {
+
+
+
+        append(s1)
+
+        append(s2)
+    }
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY)
+    } else {
+        HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
+    }
+
+
+
+}
+
+
+    fun doubleToString(double:Double):String{
+
+return String.format("%.1f", double)
+
+    }
+}
 
 
 

@@ -35,10 +35,10 @@
     <string name="company_name_label_text">Company:</string>
     <string name="shoe_size_label_text">Size:</string>
     <string name="shoe_desc_label_text">Description:</string>
-    <string name="styled_shoe_name"><b>Name:</b> %s    </string>
-    <string name="styled_company_name"><b>Company:</b> %s</string>
-    <string name="styled_size"><b>Size:</b>  %.1f</string>
-    <string name="styled_description"><b>Description:</b> %s</string>
+    <string name="styled_shoe_name"> <![CDATA[<b>Name:</b>]]></string>
+    <string name="styled_company_name"><![CDATA[<b>Company:</b>]]></string>
+    <string name="styled_size"><![CDATA[<b>Size:</b>]]></string>
+    <string name="styled_description"><![CDATA[<b>Description:</b>]]></string>
 
 
 

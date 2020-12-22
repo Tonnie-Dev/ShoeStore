@@ -18,8 +18,8 @@
     <item android:state_pressed="true">
 
         <shape>
-            <solid android:color="@color/colorAccent" />
-            <stroke android:color="@color/colorAccent" android:width="@dimen/stroke_width" />
+            <solid android:color="@color/my_light_blue" />
+            <stroke android:color="@color/my_blue" android:width="@dimen/stroke_width" />
             <corners android:radius="@dimen/corner_radius" />
 
         </shape>
