@@ -10,6 +10,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -119,7 +120,9 @@ class ShoeListing : Fragment() {
 
 
         //background color
-        textView.setBackgroundColor(resources.getColor(R.color.colorAccent))
+
+        val backgroundColor = ResourcesCompat.getColor(resources, R.color.colorAccent, null)
+        textView.setBackgroundColor(backgroundColor)
         linearLayout.addView(textView)
 
 
