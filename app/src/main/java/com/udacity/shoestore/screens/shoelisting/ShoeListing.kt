@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
 import android.view.*
+import androidx.fragment.app.Fragment
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.HtmlCompat
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -18,7 +18,6 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListingBinding
 import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_shoe_listing.*
-import timber.log.Timber
 
 
 class ShoeListing : Fragment() {
@@ -149,7 +148,7 @@ findNavController().navigate(ShoeListingDirections.actionShoeListingToLoginFragm
       }
 }
 
-fun formatText (s1:String, s2:String): Spanned{
+private fun formatText(s1:String, s2:String): Spanned{
     val sb = StringBuilder()
 
     sb.apply {
@@ -171,7 +170,7 @@ fun formatText (s1:String, s2:String): Spanned{
 }
 
 
-    fun doubleToString(double:Double):String{
+    private fun doubleToString(double:Double):String{
 
 return String.format("%.1f", double)
 

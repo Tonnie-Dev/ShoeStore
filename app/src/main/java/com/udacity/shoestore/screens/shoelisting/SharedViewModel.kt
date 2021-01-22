@@ -18,10 +18,10 @@ class SharedViewModel : ViewModel() {
     val eventNavigateToShoeDetail: LiveData<Boolean>
         get() = _eventNavigateToShoeDetail
 
-    //EVENT_NAVIGATE_TO_DETAIL_FRAGMENT_COMPLETE
+    /*//EVENT_NAVIGATE_TO_DETAIL_FRAGMENT_COMPLETE
     private val _eventNavigateToShoeDetailCompleted = MutableLiveData<Boolean>()
-    val eventNavigateToShoeCompleted: LiveData<Boolean>
-        get() = _eventNavigateToShoeDetailCompleted
+    val eventNavigateToShoeDetailCompleted: LiveData<Boolean>
+        get() = _eventNavigateToShoeDetailCompleted*/
 
 
     //EVENT_NAVIGATE_BACK_TO_SHOE_LISTING
@@ -58,7 +58,7 @@ class SharedViewModel : ViewModel() {
         _shoeList.value = mutableListOf()
         _eventNavigateToShoeDetail.value = false
         _eventNavigateBackToListing.value = false
-        _eventNavigateToShoeDetailCompleted.value = false
+
         _name.value = ""
 
     }
@@ -75,7 +75,8 @@ class SharedViewModel : ViewModel() {
     fun onNavigateToDetailFragmentComplete() {
         _eventNavigateToShoeDetail.value = false
         _eventNavigateBackToListing.value = false
-        Timber.i("Nav Value to DetailFragment ${_eventNavigateToShoeDetail.value}")
+
+        // _eventNavigateToShoeDetailCompleted.value = true
     }
 
 
