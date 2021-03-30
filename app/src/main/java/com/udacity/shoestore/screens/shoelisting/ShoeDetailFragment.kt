@@ -1,22 +1,21 @@
 package com.udacity.shoestore.screens.shoelisting
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import timber.log.Timber
 
 
 class ShoeDetailFragment : Fragment() {
 
-    private val sharedViewModel:SharedViewModel by activityViewModels()
-    private lateinit var binding:FragmentShoeDetailBinding
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+    private lateinit var binding: FragmentShoeDetailBinding
 
 
     override fun onCreateView(
@@ -24,10 +23,7 @@ class ShoeDetailFragment : Fragment() {
 
         binding = FragmentShoeDetailBinding.inflate(inflater)
 
-        val vm = ViewModelProvider(this).get(sharedViewModel::class.java)
-
         //bind layout to viewModel
-
         binding.sharedViewModel = sharedViewModel
 
 
@@ -36,19 +32,20 @@ class ShoeDetailFragment : Fragment() {
 
 
         //observe Nav Event
+        sharedViewModel.eventNavigateBackToListing.observe(
+                viewLifecycleOwner) { eventNavigateBack ->
 
-        sharedViewModel.eventNavigateBackToListing.observe(viewLifecycleOwner){ eventNavigateBack ->
-
-            if (eventNavigateBack){
+            if (eventNavigateBack) {
 
 
-                findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListing())
+                findNavController().navigate(
+                        ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListing())
             }
         }
 
 
         //Add title to toolbar
-        (activity as AppCompatActivity).supportActionBar?.title = "Add Shoe"
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.add_shoe)
         return binding.root
     }
 

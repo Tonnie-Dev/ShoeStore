@@ -39,7 +39,7 @@
     <string name="styled_company_name"><![CDATA[<b>Company:</b>]]></string>
     <string name="styled_size"><![CDATA[<b>Size:</b>]]></string>
     <string name="styled_description"><![CDATA[<b>Description:</b>]]></string>
-
+    <string name="add_shoe">Add Shoe</string>
 
 
 </resources>

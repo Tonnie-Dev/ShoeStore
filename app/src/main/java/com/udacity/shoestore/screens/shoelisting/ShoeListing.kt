@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.addCallback
@@ -16,12 +15,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
+import androidx.fragment.app.Fragment
 import com.udacity.shoestore.databinding.FragmentShoeListingBinding
 import com.udacity.shoestore.models.Shoe
 import kotlinx.android.synthetic.main.fragment_shoe_listing.*
 
 
-class ShoeListing : Fragment() {
+class ShoeListing : Fragment(){
     private lateinit var binding: FragmentShoeListingBinding
 
 
@@ -43,7 +43,8 @@ class ShoeListing : Fragment() {
             eventNavigate ->
 
             if (eventNavigate) {
-                findNavController().navigate(ShoeListingDirections.actionShoeListingToShoeDetailFragment())
+                findNavController().navigate(
+                        ShoeListingDirections.actionShoeListingToShoeDetailFragment())
                 sharedViewModel.onNavigateToDetailFragmentComplete()
             }
         }
@@ -77,7 +78,7 @@ class ShoeListing : Fragment() {
     private fun inflateShoeLabels(shoe: Shoe) {
 
 
-        val sizeString =doubleToString(shoe.size)
+        val sizeString = doubleToString(shoe.size)
         createTextLabel(getString(R.string.styled_shoe_name), shoe.name)
         createTextLabel(getString(R.string.styled_size), sizeString)
         createTextLabel(getString(R.string.styled_company_name), shoe.company)
@@ -88,7 +89,7 @@ class ShoeListing : Fragment() {
     }
 
     //draw one textView
-    private fun createTextLabel(boldLabel: String, subtext:String) {
+    private fun createTextLabel(boldLabel: String, subtext: String) {
 
 
         val textView = TextView(context)
@@ -137,7 +138,7 @@ class ShoeListing : Fragment() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item, findNavController())||super
+        return NavigationUI.onNavDestinationSelected(item, findNavController()) || super
                 .onOptionsItemSelected(item)
 
     }
@@ -146,36 +147,32 @@ class ShoeListing : Fragment() {
         super.onCreate(savedInstanceState)
 
 
-      val callback = requireActivity().onBackPressedDispatcher.addCallback(this){
-findNavController().navigate(ShoeListingDirections.actionShoeListingToLoginFragment())
-      }
-}
-
-private fun formatText(s1:String, s2:String): Spanned{
-    val sb = StringBuilder()
-
-    sb.apply {
-
-
-
-        append(s1)
-
-        append(s2)
-    }
-    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-        Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY)
-    } else {
-        HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
+        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            findNavController().navigate(ShoeListingDirections.actionShoeListingToLoginFragment())
+        }
     }
 
+    private fun formatText(s1: String, s2: String): Spanned {
+        val sb = StringBuilder()
+
+        sb.apply {
+            append(s1)
+
+            append(s2)
+        }
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(sb.toString(), Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
+        }
 
 
-}
+    }
 
 
-    private fun doubleToString(double:Double):String{
+    private fun doubleToString(double: Double): String {
 
-return String.format("%.1f", double)
+        return String.format("%.1f", double)
 
     }
 }

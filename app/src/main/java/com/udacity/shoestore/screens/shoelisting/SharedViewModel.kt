@@ -15,13 +15,8 @@ class SharedViewModel : ViewModel() {
 
     //EVENT_NAVIGATE_TO_DETAIL_FRAGMENT
     private val _eventNavigateToShoeDetail = MutableLiveData<Boolean>()
-    val eventNavigateToShoeDetail: LiveData<Boolean>
-        get() = _eventNavigateToShoeDetail
-
-    /*//EVENT_NAVIGATE_TO_DETAIL_FRAGMENT_COMPLETE
-    private val _eventNavigateToShoeDetailCompleted = MutableLiveData<Boolean>()
-    val eventNavigateToShoeDetailCompleted: LiveData<Boolean>
-        get() = _eventNavigateToShoeDetailCompleted*/
+    val eventNavigateToShoeDetail: LiveData<Boolean> =_eventNavigateToShoeDetail
+      //  get() = _eventNavigateToShoeDetail
 
 
     //EVENT_NAVIGATE_BACK_TO_SHOE_LISTING
@@ -68,15 +63,12 @@ class SharedViewModel : ViewModel() {
 
     fun onEditFabButtonClick() {
         _eventNavigateToShoeDetail.value = true
-
-
     }
 
     fun onNavigateToDetailFragmentComplete() {
         _eventNavigateToShoeDetail.value = false
         _eventNavigateBackToListing.value = false
 
-        // _eventNavigateToShoeDetailCompleted.value = true
     }
 
 
@@ -110,6 +102,5 @@ class SharedViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
 
-        Timber.i("onCleared has been summoned")
     }
 }
