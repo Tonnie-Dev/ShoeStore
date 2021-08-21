@@ -6,9 +6,14 @@ import androidx.lifecycle.ViewModel
 
 class InstructionsViewModel:ViewModel() {
 
+
     private val _eventNavigateToShoeListingFragment= MutableLiveData<Boolean>()
+val eventNavigateToShoeListingFragment:LiveData<Boolean> = _eventNavigateToShoeListingFragment
+
+    //remove backing field
+    /*private val _eventNavigateToShoeListingFragment= MutableLiveData<Boolean>()
     val eventNavigateToShoeListingFragment:LiveData<Boolean>
-    get() = _eventNavigateToShoeListingFragment
+    get() = _eventNavigateToShoeListingFragment*/
 
 
     init {
