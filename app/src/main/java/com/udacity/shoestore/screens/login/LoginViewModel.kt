@@ -6,10 +6,14 @@ import androidx.lifecycle.ViewModel
 
 class LoginViewModel : ViewModel(){
     private val _eventNavigateToWelcomeScreen = MutableLiveData<Boolean>()
+    val eventNavigateToWelcomeScreen: LiveData<Boolean> = _eventNavigateToWelcomeScreen
+
+
+    //remove backing fields
+
+/* private val _eventNavigateToWelcomeScreen = MutableLiveData<Boolean>()
     val eventNavigateToWelcomeScreen:LiveData<Boolean>
-    get() = _eventNavigateToWelcomeScreen
-
-
+    get() = _eventNavigateToWelcomeScreen*/
 
     init {
 
