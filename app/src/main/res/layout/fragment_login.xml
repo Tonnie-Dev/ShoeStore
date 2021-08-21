@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".screens.login.LoginFragment">
-
+<!--
         <TextView
             android:id="@+id/emailTextLabel"
             style="@style/my_textlabels_style"
@@ -26,20 +26,37 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />-->
 
-        <EditText
-            android:id="@+id/emailEditText"
-            android:layout_marginTop="12dp"
-            android:drawableStart="@drawable/custom_email_icon"
-            android:drawablePadding="@dimen/padding_drawable"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_field"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="75dp"
             android:hint="@string/email_hint"
-            android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailTextLabel"
-            style="@style/my_edittexts_style" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/emailEditText"
+                style="@style/my_edittexts_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="0dp"
+                android:baselineAligned="false"
+                android:drawableStart="@drawable/custom_email_icon"
+                android:drawablePadding="@dimen/padding_drawable"
+
+                android:inputType="textEmailAddress"
+                app:layout_constraintTop_toBottomOf="@+id/emailTextLabel" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/passwordTextLabel"
@@ -55,7 +72,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/text_field" />
 
         <EditText
             android:id="@+id/passwordEditText"

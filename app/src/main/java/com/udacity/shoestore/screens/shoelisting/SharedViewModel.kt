@@ -69,6 +69,11 @@ class SharedViewModel : ViewModel() {
         _eventNavigateToShoeDetail.value = false
         _eventNavigateBackToListing.value = false
 
+        _name.value = ""
+        _size.value = 0.0
+        _company.value = ""
+        _description.value = ""
+
     }
 
 
